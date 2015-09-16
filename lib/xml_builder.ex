@@ -126,6 +126,10 @@ defmodule XmlBuilder do
     end
   end
 
+  defp escape({:raw, data}) do
+    to_string(data)
+  end
+
   defp escape(data) when not is_bitstring(data),
     do: escape(to_string(data))
 
