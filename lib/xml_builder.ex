@@ -95,6 +95,9 @@ defmodule XmlBuilder do
   defp tree_node(tuple={:comment, _content}),
     do: tuple
 
+  defp tree_node(tuple={:element, _name, _attrs, _content}),
+    do: tuple
+
   defp tree_node(element_spec),
     do: element(element_spec)
 
